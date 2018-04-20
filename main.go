@@ -75,7 +75,6 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
       Jx string
       Bz string
 	}
-	
 	if yaopinname=="" {
 	  rst := Rst {"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " "}
 	  r, _ := json.Marshal(rst)

@@ -1,10 +1,23 @@
+function checkInput(elementId) {
+  var el = document.getElementById(elementId);   // Username input
+  var isNull = false;
+  var elReal = el.value.replace(/\s+/g,"");
+  if (elReal.length < 1) {            // If username too short
+   isNull = true;                             // Clear msg
+  }
+  return isNull;
+}
+
+
 function clickZbButton(){
+	if (checkInput("zb_yaopin_name")&&checkInput("qiye_name")) {
+		alert('你未输入任何内容，请检查后重新输入');
+		return;
+	}
     var ypName = document.getElementById("zb_yaopin_name");
     var cjName = document.getElementById("qiye_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
-		alert(xhr.status);
-		alert(xhr.responseText);
 		if (xhr.status == 200) {
 			  responseObject = JSON.parse(xhr.responseText);
                           alert(xhr.responseText);
@@ -43,12 +56,15 @@ function clickZbButton(){
                          document.getElementById('results').innerHTML = newContent;
 		}
 	};
-	xhr.open('GET', 'chaxun?neirong=zhongbiao&yaopinname=' + encodeURIComponent(ypName.value) + '&shengchanqiye=' + encodeURIComponent(cjName.value), true);
+	xhr.open('GET', 'chaxun?neirong=zhongbiao&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
 }
 
 function clickYbButton(){
+	if (checkInput("yb_yaopin_name") {
+		alert('你未输入任何内容，请检查后重新输入');
+		return;
     var ypName = document.getElementById("yb_yaopin_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
@@ -85,7 +101,7 @@ function clickYbButton(){
               document.getElementById('results').innerHTML = newContent;
 		}
 	};
-	xhr.open('GET', 'chaxun?neirong=yibao&yaopinname=' + encodeURIComponent(ypName.value), true);
+	xhr.open('GET', 'chaxun?neirong=yibao&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
 }
