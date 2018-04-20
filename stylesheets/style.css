@@ -122,14 +122,16 @@ h4{
 table {
   padding: 0px;
   margin-left:auto; 
-  margin-right:auto;}
+  margin-right:auto;
+  }
 
 td {
   border-radius: 3px;
   background-color: #fff;
   padding: 10px;
   margin-bottom: 3px;
-  text-align: left;}
+  text-align: left;
+  font-size:12px;}
 
 a {
   color: #2b73b6;

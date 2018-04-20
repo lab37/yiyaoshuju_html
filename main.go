@@ -37,7 +37,6 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
       Yplb string
       Sfjy string
       Scqy string
-      Lprd string
       Sy string
 	}
 	
@@ -49,13 +48,13 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	rsts := []Rst{}
     db, err := sql.Open("sqlite3", "./yiyaoshuju.db")
     checkErr(err)
-    rows, err := db.Query("SELECT tym, jx, gg, spm, jg, jgsm, bz, yplb, sfjy, scqy, lprd, sy FROM yaopinmulu WHERE tym LIKE ? AND scqy LIKE ?", 
+    rows, err := db.Query("SELECT tym, jx, gg, spm, jg, jgsm, bz, yplb, sfjy, scqy, sy FROM yaopinmulu WHERE tym LIKE ? AND scqy LIKE ?", 
 	                      "%" + yaopinname + "%", "%" + shengchanqiye + "%")
     checkErr(err)
 	defer rows.Close()
     for rows.Next() {
 	  rst := Rst{}
-      err = rows.Scan(&rst.Tym, &rst.Jx, &rst.Gg, &rst.Spm, &rst.Jg, &rst.Jgsm, &rst.Bz, &rst.Yplb, &rst.Sfjy, &rst.Scqy, &rst.Lprd, &rst.Sy)
+      err = rows.Scan(&rst.Tym, &rst.Jx, &rst.Gg, &rst.Spm, &rst.Jg, &rst.Jgsm, &rst.Bz, &rst.Yplb, &rst.Sfjy, &rst.Scqy, &rst.Sy)
       checkErr(err)
 	  rsts = append(rsts, rst)
     }
@@ -67,7 +66,6 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	type Rst struct {
 	  Fldm string
       Fl1 string
-      Fl2 string
       Fl3 string
       Yblx string
       Bh string
@@ -83,12 +81,12 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	rsts := []Rst{}
     db, err := sql.Open("sqlite3", "./yiyaoshuju.db")
     checkErr(err)
-    rows, err := db.Query("SELECT fldm, fl1, fl2, fl3, yblx, bh, ypmc, jx, bz FROM yibaomulu WHERE ypmc LIKE ?", "%" + yaopinname + "%")
+    rows, err := db.Query("SELECT fldm, fl1, fl3, yblx, bh, ypmc, jx, bz FROM yibaomulu WHERE ypmc LIKE ?", "%" + yaopinname + "%")
     checkErr(err)
 	defer rows.Close()
     for rows.Next() {
 	  rst := Rst{}
-      err = rows.Scan(&rst.Fldm, &rst.Fl1, &rst.Fl2, &rst.Fl3, &rst.Yblx, &rst.Bh, &rst.Ypmc, &rst.Jx, &rst.Bz)
+      err = rows.Scan(&rst.Fldm, &rst.Fl1, &rst.Fl3, &rst.Yblx, &rst.Bh, &rst.Ypmc, &rst.Jx, &rst.Bz)
       checkErr(err)
 	  rsts = append(rsts, rst)
     }

@@ -33,7 +33,6 @@ function clickZbButton(){
               newContent += '<td>药品类别</td>';
               newContent += '<td>是否基药</td>';
               newContent += '<td>生产企业</td>';
-              newContent += '<td>两票认定</td>';
               newContent += '<td>适用</td>';
               newContent += '</tr>';
               for (var i = 0; i < responseObject.length; i++) {    // Loop through object
@@ -48,7 +47,6 @@ function clickZbButton(){
                 newContent += '<td>'+responseObject[i].Yplb+'</td>';
                 newContent += '<td>'+responseObject[i].Sfjy+'</td>';
                 newContent += '<td>'+responseObject[i].Scqy+'</td>';
-                newContent += '<td>'+responseObject[i].Lprd+'</td>';
                 newContent += '<td>'+responseObject[i].Sy+'</td>';
                 newContent += '</tr>';
               }
@@ -62,9 +60,10 @@ function clickZbButton(){
 }
 
 function clickYbButton(){
-	if (checkInput("yb_yaopin_name") {
+	if (checkInput("yb_yaopin_name")) {
 		alert('你未输入任何内容，请检查后重新输入');
 		return;
+	}
     var ypName = document.getElementById("yb_yaopin_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
@@ -77,7 +76,6 @@ function clickYbButton(){
               newContent += '<tr>';
               newContent += '<td>分类代码</td>';
               newContent += '<td>分类I</td>';
-              newContent += '<td>分类II</td>';
               newContent += '<td>分类III</td>';
               newContent += '<td>医保类型</td>';
               newContent += '<td>编号</td>';
@@ -89,7 +87,6 @@ function clickYbButton(){
                  newContent += '<tr>';
                  newContent += '<td>'+responseObject[i].Fldm+'</td>';
                  newContent += '<td>'+responseObject[i].Fl1+'</td>';
-                 newContent += '<td>'+responseObject[i].Fl2+'</td>';
                  newContent += '<td>'+responseObject[i].Fl3+'</td>';
                  newContent += '<td>'+responseObject[i].Yblx+'</td>';
                  newContent += '<td>'+responseObject[i].Bh+'</td>';
