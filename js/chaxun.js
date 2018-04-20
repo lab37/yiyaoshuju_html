@@ -68,7 +68,6 @@ function clickYbButton(){
 	xhr.onload = function() {
 		if (xhr.status == 200) {
 			  responseObject = JSON.parse(xhr.responseText);
-                          alert(xhr.responseText);
 			  var newContent = '';
               newContent += '<tr>';
               newContent += '<td>分类代码</td>';
