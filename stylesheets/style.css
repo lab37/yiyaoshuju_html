@@ -3,7 +3,7 @@ body{
   padding-left: .5em;
   padding-right: .5em;
   font-family: "Microsoft YaHei", SimSun, Arial, "MS Trebuchet", sans-serif;
-  max-width: 69em;
+  max-width: 80em;
   background-color: #fbfaf9;
 }
 
@@ -102,7 +102,18 @@ h4{
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 	transform: translate3d(0, -2px, 0);
 }
+
+fieldset {
+	margin-bottom: 2em;
+}
 	
+legend {
+	padding: .3em;
+}
+
+#zb_yaopin_name {
+	margin-right: 3em;
+}
 .img_p{
 	margin: 0 10px 10px;
 	font-size: 12px;
