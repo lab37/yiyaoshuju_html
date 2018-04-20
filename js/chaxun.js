@@ -20,7 +20,6 @@ function clickZbButton(){
 	xhr.onload = function() {
 		if (xhr.status == 200) {
 			  responseObject = JSON.parse(xhr.responseText);
-                          alert(xhr.responseText);
 			  var newContent = '';
            	  newContent += '<tr>';
               newContent += '<td>通用名</td>';
@@ -67,8 +66,6 @@ function clickYbButton(){
     var ypName = document.getElementById("yb_yaopin_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
-		alert(xhr.status);
-		alert(xhr.responseText);
 		if (xhr.status == 200) {
 			  responseObject = JSON.parse(xhr.responseText);
                           alert(xhr.responseText);
