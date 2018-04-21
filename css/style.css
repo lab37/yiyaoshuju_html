@@ -7,9 +7,20 @@ body{
   background-color: #fbfaf9;
 }
 
-p, li{ line-height: 20px; }
+#page_header{ 
+  width: 100%;
+}
 
-#page_header{ width: 100%; }
+#page_header > nav{
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #ccc;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ccc;
+  margin-bottom: .5em;
+  line-height: 3ex;
+ }
 
 #page_header > nav > ul{
   list-style: none;
@@ -34,32 +45,19 @@ p, li{ line-height: 20px; }
 }
 
 #page_header > nav > ul > li >a{
-   margin: 3px 0;
-   padding: 0 16px;
+  margin: 3px 0;
+  padding: 0 16px;
    
 }
 
-#page_header > nav{
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: #ccc;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #ccc;
-  margin-bottom: .5em;
-  line-height: 3ex;
- }
-
 h3{
-   text-transform: uppercase;
-   font-size: 1em;
-
+  font-size: 1em;
 }
 
 h4{
-	margin: 0 10px 2px;
-	font-size: 14px;
-	color: #333;
+  margin: 0 10px 2px;
+  font-size: 14px;
+  color: #333;
 }
 
 #sidebar{
@@ -71,24 +69,63 @@ h4{
   border: 1px solid #eee;
   box-shadow: 0 0 0.5em #999;
   margin-top: 1em;
-  margin-left: 16em;
   padding-left: 2em;
   padding-right: 2em;
-  min-height: 25em;
-  min-width: 300px;
+  min-width: 50em;
+  margin-left: 16em;
+  min-height: 64ex;
+  min-width: 32em;
 }
 
-#posts ul{
+#posts fieldset {
+	margin-bottom: 2em;
+}
+	
+#posts fieldset legend {
+	padding: .3em;
+}
+
+#zb_yaopin_name {
+	margin-right: 1em;
+}
+
+#posts table {
+  padding: 0px;
+  margin-left:auto; 
+  margin-right:auto;
+  }
+
+#posts table td {
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 3px;
+  text-align: left;
+  font-size:12px;}
+
+.table_title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#adv {
+	margin-top: 4ex;
+	clear: both;
+	margin-bottom: 320px;
+    min-width: 1080px;
+	}
+
+#adv ul {
   padding-left: 0px;
   padding-right: 0px;
-  text-align: left;
+  text-align: center;
 }
 
-#posts ul li {
+#adv ul li {
 	background-color: #fff;
 	display: inline-block;
-	width: 234px;
-	height: 330px;
+	width: 220px;
+	height: 260px;
 	padding: 20px 0;
 	margin-left: 14px;
 	margin-bottom: 14px;
@@ -97,23 +134,12 @@ h4{
 	transition: all .2s linear;
 }
 
-#posts ul li:hover{
+#adv ul li:hover{
 	z-index: 2;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 	transform: translate3d(0, -2px, 0);
 }
 
-fieldset {
-	margin-bottom: 2em;
-}
-	
-legend {
-	padding: .3em;
-}
-
-#zb_yaopin_name {
-	margin-right: 1em;
-}
 .img_p{
 	margin: 0 10px 10px;
 	font-size: 12px;
@@ -128,25 +154,6 @@ legend {
   display: block; 
   text-align: center;
   width: 100%; 
-}
-
-table {
-  padding: 0px;
-  margin-left:auto; 
-  margin-right:auto;
-  }
-
-td {
-  border-radius: 3px;
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: 3px;
-  text-align: left;
-  font-size:12px;}
-
-.table_title {
-	font-weight: bold;
-	font-size: 16px;
 }
   
 a {
