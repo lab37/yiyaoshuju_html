@@ -112,7 +112,7 @@ legend {
 }
 
 #zb_yaopin_name {
-	margin-right: 3em;
+	margin-right: 1em;
 }
 .img_p{
 	margin: 0 10px 10px;
@@ -144,6 +144,11 @@ td {
   text-align: left;
   font-size:12px;}
 
+.table_title {
+	font-weight: bold;
+	font-size: 16px;
+}
+  
 a {
   color: #2b73b6;
   text-decoration: none;

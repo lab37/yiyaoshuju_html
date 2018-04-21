@@ -21,7 +21,7 @@ function clickZbButton(){
 		if (xhr.status == 200) {
 			  responseObject = JSON.parse(xhr.responseText);
 			  var newContent = '';
-           	  newContent += '<tr>';
+           	  newContent += '<tr class="table_title">';
               newContent += '<td>通用名</td>';
               newContent += '<td>剂型</td>';
               newContent += '<td>规格</td>';
@@ -69,7 +69,7 @@ function clickYbButton(){
 		if (xhr.status == 200) {
 			  responseObject = JSON.parse(xhr.responseText);
 			  var newContent = '';
-              newContent += '<tr>';
+              newContent += '<tr class="table_title">';
               newContent += '<td>分类代码</td>';
               newContent += '<td>分类I</td>';
               newContent += '<td>分类III</td>';
