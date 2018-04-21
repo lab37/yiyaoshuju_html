@@ -1,11 +1,12 @@
 /********** SLIDER **********/
 .slider {
-  max-width: 100%;
+  width: 1060px;
   margin: 0px auto 30px auto;}
 
 .slide-viewer {
     position: relative; /* needed for IE7 */
-}
+    overflow: hidden;
+    height: 430px;}
 
 .slide-group {
     width: 100%;
