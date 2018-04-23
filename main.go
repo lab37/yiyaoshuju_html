@@ -33,28 +33,29 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
       Spm string
       Jg string
       Jgsm string
+	  Lsxj string
       Bz string
-      Yplb string
+      Cglx string
       Sfjy string
       Scqy string
       Sy string
 	}
 	
 	if yaopinname=="" && shengchanqiye=="" {
-	  rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}}
+	  rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}}
 	  r, _ := json.Marshal(rst)
 	  fmt.Fprintf(w, string(r))
 	} else {
 	rsts := []Rst{}
     db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
     checkErr(err)
-    rows, err := db.Query("SELECT tym, jx, gg, spm, jg, jgsm, bz, yplb, sfjy, scqy, sy FROM yaopinmulu WHERE tym LIKE ? AND scqy LIKE ?", 
+    rows, err := db.Query("SELECT tym, jx, gg, spm, jg, jgsm, lsxj, bz, cglx, sfjy, scqy, sy FROM yaopinmulu WHERE tym LIKE ? AND scqy LIKE ?", 
 	                      "%" + yaopinname + "%", "%" + shengchanqiye + "%")
     checkErr(err)
 	defer rows.Close()
     for rows.Next() {
 	  rst := Rst{}
-      err = rows.Scan(&rst.Tym, &rst.Jx, &rst.Gg, &rst.Spm, &rst.Jg, &rst.Jgsm, &rst.Bz, &rst.Yplb, &rst.Sfjy, &rst.Scqy, &rst.Sy)
+      err = rows.Scan(&rst.Tym, &rst.Jx, &rst.Gg, &rst.Spm, &rst.Jg, &rst.Jgsm, &rst.Lsxj, &rst.Bz, &rst.Cglx, &rst.Sfjy, &rst.Scqy, &rst.Sy)
       checkErr(err)
 	  rsts = append(rsts, rst)
     }

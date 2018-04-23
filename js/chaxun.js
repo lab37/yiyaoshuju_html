@@ -28,8 +28,9 @@ function clickZbButton(){
               newContent += '<td>商品名</td>';
               newContent += '<td>价格</td>';
               newContent += '<td>价格说明</td>';
-              newContent += '<td>包装</td>';
-              newContent += '<td>药品类别</td>';
+              newContent += '<td>零售限价</td>';
+			  newContent += '<td>包装</td>';
+              newContent += '<td>采购类型</td>';
               newContent += '<td>是否基药</td>';
               newContent += '<td>生产企业</td>';
               newContent += '<td>适用</td>';
@@ -42,8 +43,9 @@ function clickZbButton(){
                 newContent += '<td>'+responseObject[i].Spm+'</td>';
                 newContent += '<td>'+responseObject[i].Jg+'</td>';
                 newContent += '<td>'+responseObject[i].Jgsm+'</td>';
+				newContent += '<td>'+responseObject[i].Lsxj+'</td>';
                 newContent += '<td>'+responseObject[i].Bz+'</td>';
-                newContent += '<td>'+responseObject[i].Yplb+'</td>';
+                newContent += '<td>'+responseObject[i].Cglx+'</td>';
                 newContent += '<td>'+responseObject[i].Sfjy+'</td>';
                 newContent += '<td>'+responseObject[i].Scqy+'</td>';
                 newContent += '<td>'+responseObject[i].Sy+'</td>';
