@@ -80,14 +80,14 @@ h4{
 }
 
 #posts fieldset {
-	margin-bottom: 20px;
+	margin-bottom: 32px;
 }
 	
 #posts fieldset legend {
 	padding: 3px;
 }
 
-#zb_yaopin_name {
+fieldset input {
 	margin-right: 10px;
 }
 

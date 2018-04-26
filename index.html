@@ -27,7 +27,7 @@
 	    <h3>中标数据查询</h3>		
 		<ul>
 		  <li><a target="_blank" href="http://www.sdyypt.net/Info/Index.aspx">药品中标数据查询</a></li>
-          <li><a target="_blank" href="http://www.sdyypt.net/Info/Index.aspx">基层增补目录查询</a></li>
+          <li><a target="_blank" href="http://www.sdyypt.net/Info/Index.aspx">基层补充目录查询</a></li>
         </ul>
 		
 		<h3>医疗保险数据查询</h3>
@@ -41,6 +41,12 @@
           <li><a target="_blank" href="http://60.208.78.46:888">山东九洲通流向查询</a></li>
           <li><a target="_blank" href="http://58.56.94.148:8090/">华润流向查询</a></li>
           <li><a target="_blank" href="http://222.173.24.186:9090/">国药控股流向查询</a></li>
+        </ul>
+		
+		<h3>渠道与终端数据查询</h3>
+		<ul>
+		  <li><a target="_blank" href="https://www.tianyancha.com/">企业资料查询</a></li>
+		  <li><a target="_blank" href="doc/山东全省医疗机构目录.xlsx">各地区医疗终端明细</a></li>
         </ul>
 		
 		<h3>在线辅助工具</h3> 
@@ -79,9 +85,19 @@
 
 		  </fieldset>
 		
+		  <fieldset id="jcbc_form">
+		    <legend><span>基层补充目录查询</span></legend>
+			  <label for="yaopin_name" >药品名称：</label>
+			  <input type="text" id="jcbc_yaopin_name" name="yaopin_name" />
+			  <label for="qiye_name">生产企业：</label>
+			  <input type="text" id="jcbc_qiye_name" name="qiye_name" />
+			  <button id="jcbc_button">查询</button>
+
+		  </fieldset>
+		
 		  <fieldset id="yb_form">
 		    <legend><span>药品医保目录查询</span></legend>
-			  <label for="yaopin_name">药品名称：</label>
+			  <label for="yaopin_name" >药品名称：</label>
 			  <input type="text" id="yb_yaopin_name" name="yaopin_name" />
 			  <button id="yibao_button">查询</button>
 		  </fieldset>

@@ -97,6 +97,45 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 }
 }
   
+  if biaoge == "jcbc" { 
+    shengchanqiye := strings.TrimFunc(keys["shengchanqiye"][0],unicode.IsSpace)
+	type Rst struct {
+	  Tym string
+      Jx string
+      Gg string
+      Bz string
+      Bzcl string
+      Sccj string
+	  Jg string
+      Jgsm string
+      Zdjyjg string
+      Pjjyjg string
+      Cglx string
+      Xmmc string
+	}
+	
+	if yaopinname=="" && shengchanqiye=="" {
+	  rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}}
+	  r, _ := json.Marshal(rst)
+	  fmt.Fprintf(w, string(r))
+	} else {
+	rsts := []Rst{}
+    db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+    checkErr(err)
+    rows, err := db.Query("SELECT tym, jx, gg, bz, bzcl, sccj, jg, jgsm, zdjyjg, pjjyjg, cglx, xmmc FROM jicengbuchongmulu WHERE tym LIKE ? AND sccj LIKE ?", 
+	                      "%" + yaopinname + "%", "%" + shengchanqiye + "%")
+    checkErr(err)
+	defer rows.Close()
+    for rows.Next() {
+	  rst := Rst{}
+      err = rows.Scan(&rst.Tym, &rst.Jx, &rst.Gg, &rst.Bz, &rst.Bzcl, &rst.Sccj, &rst.Jg, &rst.Jgsm, &rst.Zdjyjg, &rst.Pjjyjg, &rst.Cglx, &rst.Xmmc)
+      checkErr(err)
+	  rsts = append(rsts, rst)
+    }
+	r, _ := json.Marshal(rsts)
+	fmt.Fprintf(w, string(r))
+  }  
+  }
 
 func main() {
   server := http.Server{
