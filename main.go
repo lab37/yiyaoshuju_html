@@ -95,7 +95,6 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(r))
   }  
 }
-}
   
   if biaoge == "jcbc" { 
     shengchanqiye := strings.TrimFunc(keys["shengchanqiye"][0],unicode.IsSpace)
@@ -135,6 +134,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	r, _ := json.Marshal(rsts)
 	fmt.Fprintf(w, string(r))
   }  
+  }
   }
 
 func main() {
