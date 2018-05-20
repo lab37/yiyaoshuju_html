@@ -1,6 +1,6 @@
 server {
       listen 80;
-	  listen {::}:80;
+	  listen [::]:80;
       #yiyaoshuju文件夹中放此网站的静态文件
 	  root /var/www/html/yiyaoshuju;
 	  index  index.html;
