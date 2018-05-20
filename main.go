@@ -142,7 +142,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 
 func main() {
   server := http.Server{
-	  Addr: ":80",
+	  Addr: "127.0.0.1:8090",
   }
   http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, r.URL.Path[1:])
