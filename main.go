@@ -48,6 +48,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	} else {
 	rsts := []Rst{}
     db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+	defer db.Close()
     checkErr(err)
     rows, err := db.Query("SELECT tym, jx, gg, spm, jg, jgsm, lsxj, bz, cglx, sfjy, scqy, sy FROM yaopinmulu WHERE tym LIKE ? AND scqy LIKE ?", 
 	                      "%" + yaopinname + "%", "%" + shengchanqiye + "%")
@@ -81,6 +82,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	} else {
 	rsts := []Rst{}
     db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+	defer db.Close()
     checkErr(err)
     rows, err := db.Query("SELECT fldm, fl1, fl3, yblx, bh, ypmc, jx, bz FROM yibaomulu WHERE ypmc LIKE ?", "%" + yaopinname + "%")
     checkErr(err)
@@ -120,6 +122,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	} else {
 	rsts := []Rst{}
     db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+	defer db.Close()
     checkErr(err)
     rows, err := db.Query("SELECT tym, jx, gg, bz, bzcl, sccj, jg, jgsm, zdjyjg, pjjyjg, cglx, xmmc FROM jicengbuchongmulu WHERE tym LIKE ? AND sccj LIKE ?", 
 	                      "%" + yaopinname + "%", "%" + shengchanqiye + "%")
