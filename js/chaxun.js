@@ -159,7 +159,7 @@ function clickRlButton(){
 	}
     var ypName = document.getElementById("rl_yaopin_name");
     var cjName = document.getElementById("rl_qiye_name");
-	var dsName = document.getElementById{"rl_dishi_name");
+	var dsName = document.getElementById("rl_dishi_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
 		if (xhr.status == 200) {
@@ -195,7 +195,7 @@ function clickRlButton(){
              document.getElementById('results').innerHTML = newContent;
 		}
 	};
-	xhr.open('GET', 'chaxun?neirong=rlzy&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"") + '&dishi=' + encodeURIComponent(dsName.value.replace(/\s+/g,"")), true);
+	xhr.open('GET', 'chaxun?neirong=rlzy&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")) + '&dishi=' + encodeURIComponent(dsName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
 }

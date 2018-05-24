@@ -162,7 +162,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT tym, jx, gg, scqy, ds, yy, fzr, lxfs, ryls, bz FROM renliziyuan WHERE tym LIKE ? AND sccj LIKE ? And ds LIKE ?", 
+			rows, err := db.Query("SELECT tym, jx, gg, scqy, ds, yy, fzr, lxfs, ryls, bz FROM renliziyuan WHERE tym LIKE ? AND scqy LIKE ? And ds LIKE ?", 
 								  "%" + yaopinname + "%", "%" + shengchanqiye + "%", "%" + dishi + "%")
 			checkErr(err)
 			defer rows.Close()
@@ -180,8 +180,8 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	    type Rst struct {
 		  Tym string
 		}
-	    rst := Rst{{"你未输入任何有效的字符串"}}
-		r, _ := json.Marshal(rsts)
+	    rst := Rst{"你未输入任何有效的字符串"}
+		r, _ := json.Marshal(rst)
 		fmt.Fprintf(w, string(r))
 	}
 	
