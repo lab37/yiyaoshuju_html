@@ -52,7 +52,7 @@ function clickZbButton(){
                 newContent += '</tr>';
               }
         // Update the page with the new content
-                         document.getElementById('results').innerHTML = newContent;
+              document.getElementById('results').innerHTML = newContent;
 		}
 	};
 	xhr.open('GET', 'chaxun?neirong=zhongbiao&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")), true);
@@ -144,10 +144,58 @@ function clickJcbcButton(){
                 newContent += '</tr>';
               }
         // Update the page with the new content
-                         document.getElementById('results').innerHTML = newContent;
+              document.getElementById('results').innerHTML = newContent;
 		}
 	};
 	xhr.open('GET', 'chaxun?neirong=jcbc&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")), true);
+	xhr.send(null);
+	
+}
+
+function clickRlButton(){
+	if (checkInput("rl_yaopin_name")&&checkInput("rl_qiye_name")&&checkInput("rl_dishi_name")) {
+		alert('你未输入任何内容，请检查后重新输入');
+		return;
+	}
+    var ypName = document.getElementById("rl_yaopin_name");
+    var cjName = document.getElementById("rl_qiye_name");
+	var dsName = document.getElementById{"rl_dishi_name");
+	var xhr = new XMLHttpRequest();
+	xhr.onload = function() {
+		if (xhr.status == 200) {
+			  responseObject = JSON.parse(xhr.responseText);
+			  var newContent = '';
+           	  newContent += '<tr class="table_title">';
+              newContent += '<td>通用名</td>';
+              newContent += '<td>剂型</td>';
+              newContent += '<td>规格</td>';
+              newContent += '<td>生产企业</td>';
+              newContent += '<td>地市</td>';
+			  newContent += '<td>医院</td>';
+              newContent += '<td>负责人</td>';
+              newContent += '<td>联系方式</td>';
+			  newContent += '<td>负责人类型</td>';
+			  newContent += '<td>备注</td>';
+              newContent += '</tr>';
+              for (var i = 0; i < responseObject.length; i++) {    // Loop through object
+                newContent += '<tr>';
+                newContent += '<td>'+responseObject[i].Tym+'</td>';
+                newContent += '<td>'+responseObject[i].Jx+'</td>';
+                newContent += '<td>'+responseObject[i].Gg+'</td>';
+                newContent += '<td>'+responseObject[i].Scqy+'</td>';
+                newContent += '<td>'+responseObject[i].Ds+'</td>';
+                newContent += '<td>'+responseObject[i].Yy+'</td>';
+				newContent += '<td>'+responseObject[i].Fzr+'</td>';
+                newContent += '<td>'+responseObject[i].Lxfs+'</td>';
+                newContent += '<td>'+responseObject[i].Rylx+'</td>';
+                newContent += '<td>'+responseObject[i].Bz+'</td>';
+                newContent += '</tr>';
+              }
+        // Update the page with the new content
+             document.getElementById('results').innerHTML = newContent;
+		}
+	};
+	xhr.open('GET', 'chaxun?neirong=rlzy&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"") + '&dishi=' + encodeURIComponent(dsName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
 }
@@ -156,6 +204,8 @@ function clickJcbcButton(){
 var zb = document.getElementById('zhongbiao_button');
 var yb = document.getElementById('yibao_button');
 var jcbc = document.getElementById('jcbc_button');
+var rlzy = document.getElementById('rl_button');
 zb.addEventListener('click', clickZbButton, false);
 yb.addEventListener('click', clickYbButton, false);
 jcbc.addEventListener('click', clickJcbcButton, false);
+rlzy.addEventListener('click', clickRlButton, false);
