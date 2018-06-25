@@ -9,6 +9,9 @@ function hetong_addItem() {
 	  newTd = document.createElement('td')
 	  newInput = document.createElement('input')
 	  newTd.appendChild(newInput);
+	  if (i>5) {
+		newInput.disabled = "true";
+	  }
 	  lastTr.appendChild(newTd);
 	}
 	
@@ -35,6 +38,9 @@ function patch_addItem() {
 	for (i=0;i<8;i++) {
 	  newTd = document.createElement('td')
 	  newInput = document.createElement('input')
+	  if (i>5) {
+		newInput.disabled = "true";
+	  }
 	  newTd.appendChild(newInput);
 	  lastTr.appendChild(newTd);
 	}
