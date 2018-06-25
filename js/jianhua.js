@@ -24,8 +24,9 @@ function hetong_delItem() {
 // Find the element which contains the element to be removed.
 var containerEl = document.getElementById('hetong');
 var removeEl = containerEl.lastChild;
-
-containerEl.removeChild(removeEl);
+if (containerEl.children.length>1) {
+    containerEl.removeChild(removeEl);
+}
 }
 
 function patch_addItem() {
@@ -54,7 +55,9 @@ function patch_delItem() {
 // Find the element which contains the element to be removed.
 var containerEl = document.getElementById('patch');
 var removeEl = containerEl.lastChild;
-containerEl.removeChild(removeEl);
+if (containerEl.children.length>1) {
+    containerEl.removeChild(removeEl);
+}
 };
 
 function mFor(a,b,d,fs,bz) {
