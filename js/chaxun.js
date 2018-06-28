@@ -10,12 +10,12 @@ function checkInput(elementId) {
 
 
 function clickZbButton(){
-	if (checkInput("zb_yaopin_name")&&checkInput("qiye_name")) {
+	if (checkInput("ml_yaopin_name")&&checkInput("ml_qiye_name")) {
 		alert('你未输入任何内容，请检查后重新输入');
 		return;
 	}
-    var ypName = document.getElementById("zb_yaopin_name");
-    var cjName = document.getElementById("qiye_name");
+    var ypName = document.getElementById("ml_yaopin_name");
+    var cjName = document.getElementById("ml_qiye_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
 		if (xhr.status == 200) {
@@ -61,11 +61,11 @@ function clickZbButton(){
 }
 
 function clickYbButton(){
-	if (checkInput("yb_yaopin_name")) {
+	if (checkInput("ml_yaopin_name")) {
 		alert('你未输入任何内容，请检查后重新输入');
 		return;
 	}
-    var ypName = document.getElementById("yb_yaopin_name");
+    var ypName = document.getElementById("ml_yaopin_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
 		if (xhr.status == 200) {
@@ -102,12 +102,12 @@ function clickYbButton(){
 }
 
 function clickJcbcButton(){
-	if (checkInput("jcbc_yaopin_name")&&checkInput("jcbc_qiye_name")) {
+	if (checkInput("ml_yaopin_name")&&checkInput("ml_qiye_name")) {
 		alert('你未输入任何内容，请检查后重新输入');
 		return;
 	}
-    var ypName = document.getElementById("jcbc_yaopin_name");
-    var cjName = document.getElementById("jcbc_qiye_name");
+    var ypName = document.getElementById("ml_yaopin_name");
+    var cjName = document.getElementById("ml_qiye_name");
 	var xhr = new XMLHttpRequest();
 	xhr.onload = function() {
 		if (xhr.status == 200) {
@@ -201,11 +201,22 @@ function clickRlButton(){
 }
 
 
-var zb = document.getElementById('zhongbiao_button');
-var yb = document.getElementById('yibao_button');
-var jcbc = document.getElementById('jcbc_button');
+function queryDone() {
+  var listType1 =  document.getElementById("r1");
+  var listType2 =  document.getElementById("r2");
+  var listType3 =  document.getElementById("r3");
+  if (listType1.checked) clickZbButton();
+  if (listType2.checked) clickJcbcButton();
+  if (listType3.checked) clickYbButton();
+  
+}
+
+var el = document.getElementById('query_button');
+if (el.addEventListener) {                       
+  el.addEventListener('click', queryDone, false);                                     
+} else {                                        
+  el.attachEvent('onclick',queryDone);
+}
+
 var rlzy = document.getElementById('rl_button');
-zb.addEventListener('click', clickZbButton, false);
-yb.addEventListener('click', clickYbButton, false);
-jcbc.addEventListener('click', clickJcbcButton, false);
 rlzy.addEventListener('click', clickRlButton, false);

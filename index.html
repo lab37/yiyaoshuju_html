@@ -77,31 +77,16 @@
 		 同行有什么建议或问题可以联系站长，大家共同进步（QQ：379718363留言即可，不定期查看），可承接数据处理工作。
 		</p>
 		
-		  <fieldset id="zb_form">
-		    <legend><span>药品中标目录查询</span></legend>
-			  <label for="yaopin_name">药品名称：</label>
-			  <input type="text" id="zb_yaopin_name" name="yaopin_name" />
-			  <label for="qiye_name">生产企业：</label>
-			  <input type="text" id="qiye_name" name="qiye_name" />
-			  <button id="zhongbiao_button">查询</button>
-
-		  </fieldset>
-		
-		  <fieldset id="jcbc_form">
-		    <legend><span>基层补充目录查询</span></legend>
-			  <label for="yaopin_name" >药品名称：</label>
-			  <input type="text" id="jcbc_yaopin_name" name="yaopin_name" />
-			  <label for="qiye_name">生产企业：</label>
-			  <input type="text" id="jcbc_qiye_name" name="qiye_name" />
-			  <button id="jcbc_button">查询</button>
-
-		  </fieldset>
-		
-		  <fieldset id="yb_form">
-		    <legend><span>药品医保目录查询</span></legend>
-			  <label for="yaopin_name" >药品名称：</label>
-			  <input type="text" id="yb_yaopin_name" name="yaopin_name" />
-			  <button id="yibao_button">查询</button>
+		  <fieldset id="yplist">
+		    <legend><span>药品目录查询</span></legend>
+			<label for="ml_yaopin_name">药品名称：</label><input type="text" id="ml_yaopin_name" name="ml_yaopin_name" />
+			<label for="ml_qiye_name">生产企业：</label><input type="text" id="ml_qiye_name" name="ml_qiye_name" />
+			<p>
+            <label for="r1"><input id="r1" type="radio" value="0" name="chose" checked>省区中标目录</label>
+            <label for="r2"><input id="r2" type="radio" value="1" name="chose">基层补充目录</label>
+		    <label for="r3"><input id="r3" type="radio" value="2" name="chose">医疗保险目录</label>
+			</p>
+			<button id="query_button">查询</button>
 		  </fieldset>
 		  
 		   <fieldset id="rl_form">
@@ -119,7 +104,6 @@
 		</table>
 		
 	  </article>
-	</section>
 	</section>
 	<section id="adv">
       <div class="slider">
@@ -198,7 +182,6 @@
         <div class="slide-buttons"></div>
       </div>
 
-    </section>
     </section>
 		 
   <footer id="page_footer">

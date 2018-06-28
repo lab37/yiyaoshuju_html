@@ -91,6 +91,19 @@ fieldset input {
 	margin-right: 10px;
 }
 
+#yplist button {
+	width: 90px;
+}
+
+#yplist p label {
+	width: 60px;
+	margin-right: 20px;
+}
+
+#rl_form {
+	margin-top: 50px;
+}
+
 #posts table {
   padding: 0px;
   margin-left:auto; 
