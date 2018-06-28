@@ -81,10 +81,10 @@
 		    <legend><span>药品目录查询</span></legend>
 			<label for="ml_yaopin_name">药品名称：</label><input type="text" id="ml_yaopin_name" name="ml_yaopin_name" />
 			<label for="ml_qiye_name">生产企业：</label><input type="text" id="ml_qiye_name" name="ml_qiye_name" />
-			<p>
-            <label for="r1"><input id="r1" type="radio" value="0" name="chose" checked>省区中标目录</label>
-            <label for="r2"><input id="r2" type="radio" value="1" name="chose">基层补充目录</label>
-		    <label for="r3"><input id="r3" type="radio" value="2" name="chose">医疗保险目录</label>
+			<p id = "radioGroups">
+            <label for="r1"><input id="r1" type="radio" value="0" name="chose" checked >省区中标目录</label>
+            <label for="r2"><input id="r2" type="radio" value="1" name="chose" >基层补充目录</label>
+		    <label for="r3"><input id="r3" type="radio" value="2" name="chose" >医疗保险目录</label>
 			</p>
 			<button id="query_button">查询</button>
 		  </fieldset>
@@ -95,8 +95,10 @@
 			  <input type="text" id="rl_yaopin_name" name="yaopin_name" />
 			  <label for="qiye_name">生产企业：</label>
 			  <input type="text" id="rl_qiye_name" name="qiye_name" />
-			  <label for="dishi">地市：</label>
+			  <p>
+			  <label for="dishi">地市名称：</label>
 			  <input type="text" id="rl_dishi_name" name="dishi" />
+			  </p>
 			  <button id="rl_button">查询</button>
 		  </fieldset>
 		  

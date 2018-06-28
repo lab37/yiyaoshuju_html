@@ -6,7 +6,7 @@ function checkInput(elementId) {
    isNull = true;                             // Clear msg
   }
   return isNull;
-}
+};
 
 
 function clickZbButton(){
@@ -58,7 +58,7 @@ function clickZbButton(){
 	xhr.open('GET', 'chaxun?neirong=zhongbiao&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
-}
+};
 
 function clickYbButton(){
 	if (checkInput("ml_yaopin_name")) {
@@ -99,7 +99,7 @@ function clickYbButton(){
 	xhr.open('GET', 'chaxun?neirong=yibao&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
-}
+};
 
 function clickJcbcButton(){
 	if (checkInput("ml_yaopin_name")&&checkInput("ml_qiye_name")) {
@@ -150,7 +150,7 @@ function clickJcbcButton(){
 	xhr.open('GET', 'chaxun?neirong=jcbc&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
-}
+};
 
 function clickRlButton(){
 	if (checkInput("rl_yaopin_name")&&checkInput("rl_qiye_name")&&checkInput("rl_dishi_name")) {
@@ -198,8 +198,7 @@ function clickRlButton(){
 	xhr.open('GET', 'chaxun?neirong=rlzy&yaopinname=' + encodeURIComponent(ypName.value.replace(/\s+/g,"")) + '&shengchanqiye=' + encodeURIComponent(cjName.value.replace(/\s+/g,"")) + '&dishi=' + encodeURIComponent(dsName.value.replace(/\s+/g,"")), true);
 	xhr.send(null);
 	
-}
-
+};
 
 function queryDone() {
   var listType1 =  document.getElementById("r1");
@@ -209,7 +208,8 @@ function queryDone() {
   if (listType2.checked) clickJcbcButton();
   if (listType3.checked) clickYbButton();
   
-}
+};
+
 
 var el = document.getElementById('query_button');
 if (el.addEventListener) {                       
@@ -217,6 +217,8 @@ if (el.addEventListener) {
 } else {                                        
   el.attachEvent('onclick',queryDone);
 }
+
+
 
 var rlzy = document.getElementById('rl_button');
 rlzy.addEventListener('click', clickRlButton, false);
