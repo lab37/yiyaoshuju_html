@@ -217,8 +217,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	    }
 	case "channelh":
 	    channel := strings.TrimFunc(keys["channel"][0],unicode.IsSpace)
-		city := strings.TrimFunc(keys["city"][0],unicode.IsSpace)
-		county := strings.TrimFunc(keys["county"][0],unicode.IsSpace)
+		region := strings.TrimFunc(keys["region"][0],unicode.IsSpace)
 		type Rst struct {
 		  Channel string
 		  Type string
@@ -240,8 +239,8 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT channel, type, region, hospital, department, post, name, tel, remark FROM channelh WHERE channel LIKE ? AND city LIKE ? And county LIKE ?", 
-								  "%" + channel + "%", "%" + channel + "%", "%" + city + "%","%" + county + "%")
+			rows, err := db.Query("SELECT channel, type, region, hospital, department, post, name, tel, remark FROM channelh WHERE channel LIKE ? AND region LIKE ?", 
+								  "%" + channel + "%", "%" + region + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
@@ -281,7 +280,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT hospital, type, legalman, class, economy, city, county, address,  works, beds, remark FROM terminals WHERE hospital LIKE ? AND city LIKE ? And county LIKE ?", 
-								  "%" + hospital + "%", "%" + city + "%","%" + county + "%")
+								  "%" + hospital + "%", "%" + city + "%", "%" + county + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
