@@ -125,8 +125,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT tym, jx, gg, bz, bzcl, sccj, jg, jgsm, zdjyjg, pjjyjg, cglx, xmmc FROM jicengbuchongmulu WHERE tym LIKE ? AND sccj LIKE ?", 
-								  "%" + yaopinname + "%", "%" + shengchanqiye + "%")
+			rows, err := db.Query("SELECT tym, jx, gg, bz, bzcl, sccj, jg, jgsm, zdjyjg, pjjyjg, cglx, xmmc FROM jicengbuchongmulu WHERE tym LIKE ? AND sccj LIKE ?","%" + yaopinname + "%", "%" + shengchanqiye + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
@@ -163,8 +162,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT factory, city, county, hospital, variety, name, tel, remark FROM factoryh WHERE variety LIKE ? AND factory LIKE ? And city LIKE ? And county LIKE ? And hospital LIKE ?", 
-								  "%" + yaopinname + "%", "%" + factory + "%", "%" + city + "%","%" + county + "%","%" + hospital + "%")
+			rows, err := db.Query("SELECT factory, city, county, hospital, variety, name, tel, remark FROM factoryh WHERE variety LIKE ? AND factory LIKE ? And city LIKE ? And county LIKE ? And hospital LIKE ?","%" + yaopinname + "%", "%" + factory + "%", "%" + city + "%","%" + county + "%","%" + hospital + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
@@ -202,8 +200,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT name, tel, city, county, hospital, variety, factory, remark FROM terminalh WHERE variety LIKE ? AND factory LIKE ? And city LIKE ? And county LIKE ? And hospital LIKE ?", 
-								  "%" + yaopinname + "%", "%" + factory + "%", "%" + city + "%","%" + county + "%","%" + hospital + "%")
+			rows, err := db.Query("SELECT name, tel, city, county, hospital, variety, factory, remark FROM terminalh WHERE variety LIKE ? AND factory LIKE ? And city LIKE ? And county LIKE ? And hospital LIKE ?","%" + yaopinname + "%", "%" + factory + "%", "%" + city + "%","%" + county + "%","%" + hospital + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
@@ -239,8 +236,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT channel, type, region, hospital, department, post, name, tel, remark FROM channelh WHERE channel LIKE ? AND region LIKE ?", 
-								  "%" + channel + "%", "%" + region + "%")
+			rows, err := db.Query("SELECT channel, type, region, hospital, department, post, name, tel, remark FROM channelh WHERE channel LIKE ? AND region LIKE ?","%" + channel + "%", "%" + region + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
@@ -279,8 +275,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
-			rows, err := db.Query("SELECT hospital, type, legalman, class, economy, city, county, address,  works, beds, remark FROM terminals WHERE hospital LIKE ? AND city LIKE ? And county LIKE ?", 
-								  "%" + hospital + "%", "%" + city + "%", "%" + county + "%")
+			rows, err := db.Query("SELECT hospital, type, legalman, class, economy, city, county, address,  works, beds, remark FROM terminals WHERE hospital LIKE ? AND city LIKE ? And county LIKE ?", "%" + hospital + "%", "%" + city + "%", "%" + county + "%")
 			checkErr(err)
 			defer rows.Close()
 			for rows.Next() {
