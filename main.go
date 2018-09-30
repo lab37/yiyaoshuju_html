@@ -230,7 +230,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		  Remark string
 		}
 		
-		if channel=="" && city=="" && county=="" {
+		if channel=="" && region=="" {
 		    rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " "}}
 		    r, _ := json.Marshal(rst)
 		    fmt.Fprintf(w, string(r))
