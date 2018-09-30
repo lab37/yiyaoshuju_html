@@ -17,14 +17,14 @@ func checkErr(err error) {
 }
 
 func chaxun(w http.ResponseWriter, r *http.Request) {
-
+  dataBasePath := "./db/yiyaoshuju.db"
   keys := r.URL.Query()
   
   w.Header().Set("Content-Type", "application/json;charset:utf-8;")
   biaoge := keys["neirong"][0]
   yaopinname := strings.TrimFunc(keys["yaopinname"][0],unicode.IsSpace)
   
-  switch biaobe {
+  switch biaoge {
   case "zhongbiao": 
 		shengchanqiye := strings.TrimFunc(keys["shengchanqiye"][0],unicode.IsSpace)
 		type Rst struct {
@@ -48,7 +48,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		  fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT tym, jx, gg, spm, jg, jgsm, lsxj, bz, cglx, sfjy, scqy, sy FROM yaopinmulu WHERE tym LIKE ? AND scqy LIKE ?", 
@@ -84,7 +84,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		    fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT fldm, fl1, fl3, yblx, bh, ypmc, jx, bz FROM yibaomulu WHERE ypmc LIKE ?", "%" + yaopinname + "%")
@@ -122,7 +122,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		    fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT tym, jx, gg, bz, bzcl, sccj, jg, jgsm, zdjyjg, pjjyjg, cglx, xmmc FROM jicengbuchongmulu WHERE tym LIKE ? AND sccj LIKE ?", 
@@ -142,7 +142,6 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	    factory := strings.TrimFunc(keys["factory"][0],unicode.IsSpace)
 		city := strings.TrimFunc(keys["city"][0],unicode.IsSpace)
 		county := strings.TrimFunc(keys["county"][0],unicode.IsSpace)
-		variety := strings.TrimFunc(keys["variety"][0],unicode.IsSpace)
 		hospital := strings.TrimFunc(keys["hospital"][0],unicode.IsSpace)
 		type Rst struct {
 		  Factory string
@@ -155,13 +154,13 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		  Remark string
 		}
 		
-		if yaopinname=="" && factory=="" && city=="" && county=="" & hospital =="" {
+		if yaopinname=="" && factory=="" && city=="" && county=="" && hospital =="" {
 		    rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " "}}
 		    r, _ := json.Marshal(rst)
 		    fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT factory, city, county, hospital, variety, name, tel, remark FROM factoryh WHERE variety LIKE ? AND factory LIKE ? And city LIKE ? And county LIKE ? And hospital LIKE ?", 
@@ -182,7 +181,6 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 	    factory := strings.TrimFunc(keys["factory"][0],unicode.IsSpace)
 		city := strings.TrimFunc(keys["city"][0],unicode.IsSpace)
 		county := strings.TrimFunc(keys["county"][0],unicode.IsSpace)
-		variety := strings.TrimFunc(keys["variety"][0],unicode.IsSpace)
 		hospital := strings.TrimFunc(keys["hospital"][0],unicode.IsSpace)
 		type Rst struct {
 		  Name string
@@ -195,13 +193,13 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		  Remark string
 		}
 		
-		if yaopinname=="" && factory=="" && city=="" && county=="" & hospital =="" {
+		if yaopinname=="" && factory=="" && city=="" && county=="" && hospital =="" {
 		    rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " "}}
 		    r, _ := json.Marshal(rst)
 		    fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT name, tel, city, county, hospital, variety, factory, remark FROM terminalh WHERE variety LIKE ? AND factory LIKE ? And city LIKE ? And county LIKE ? And hospital LIKE ?", 
@@ -239,7 +237,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		    fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT channel, type, region, hospital, department, post, name, tel, remark FROM channelh WHERE channel LIKE ? AND city LIKE ? And county LIKE ?", 
@@ -279,7 +277,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		    fmt.Fprintf(w, string(r))
 		} else {
 			rsts := []Rst{}
-			db, err := sql.Open("sqlite3", "./db/yiyaoshuju.db")
+			db, err := sql.Open("sqlite3", dataBasePath)
 			defer db.Close()
 			checkErr(err)
 			rows, err := db.Query("SELECT hospital, type, legalman, class, economy, city, county, address,  works, beds, remark FROM terminals WHERE hospital LIKE ? AND city LIKE ? And county LIKE ?", 
