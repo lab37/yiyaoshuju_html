@@ -274,7 +274,7 @@ func chaxun(w http.ResponseWriter, r *http.Request) {
 		}
 		
 		if hospital=="" && city=="" && county=="" {
-		    rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " ", , " ", , " "}}
+		    rst := []Rst {{"你未输入任何有效的字符串", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "}}
 		    r, _ := json.Marshal(rst)
 		    fmt.Fprintf(w, string(r))
 		} else {
