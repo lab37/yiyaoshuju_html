@@ -128,6 +128,13 @@ button {
 	font-size: 16px;
 }
 
+table {
+  padding: 0px;
+  margin-left:auto; 
+  margin-right:auto;
+  width:100%;
+}
+
 #adv {
 	margin-top: 32px;
 	clear: both;
