@@ -3,7 +3,7 @@ body{
   padding-left:  10px;
   padding-right: 10px;
   font-family: "Microsoft YaHei", SimSun, Arial, "MS Trebuchet", sans-serif;
-  width: 1080px;
+  width: 1660px;
   background-color: #fbfaf9;
 }
 
@@ -60,23 +60,28 @@ h4{
   color: #333;
 }
 
+#ctn {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 #sidebar{
-  display: inline-block;
-  width: 200px;
+  margin-top: 0.4em;
+  width:240px;
   font-size: .875em;
 }
 
+
 #posts{
-  display: inline-block;
   border: 1px solid #eee;
   box-shadow: 0 0 0.5em #999;
-  margin-top: 10px;
-  margin-left: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 810px;
+  margin-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
   min-height: 600px;
-  vertical-align: top;
+  width:1440px;
+ 
 }
 
 #posts fieldset {
